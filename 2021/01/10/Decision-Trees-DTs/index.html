@@ -135,7 +135,8 @@ MathJax = {
         <div style="text-align: center"> Decision Trees là một trong những thuật toán phổ biến trong Machine Learning, là tiền đề để phát triển những thuật toán phức tạp hơn như Random Forest, XGBoost và LightGBM. Hôm nay mình sẽ cùng nhau tìm hiểu thuật toán này nhé. </div>
 
 <p><img src="https://hackernoon.com/hn-images/1*6-ctYxKmTS8v0RzwLILfXA.png" alt="alt text" title="Random Forests meme"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from sklearn.datasets import load_iris</span><br><span class="line">from sklearn.tree import DecisionTreeClassifier</span><br><span class="line"></span><br><span class="line">iris &#x3D; load_iris()</span><br><span class="line">X &#x3D; iris.data[:, 2:] # petal length and width</span><br><span class="line">y &#x3D; iris.target</span><br><span class="line"></span><br><span class="line">tree_clf &#x3D; DecisionTreeClassifier(max_depth&#x3D;2)</span><br><span class="line">tree_clf.fit(X, y)</span><br></pre></td></tr></table></figure>
+<h3 id="Bai-toan-thuc-te"><a href="#Bai-toan-thuc-te" class="headerlink" title="Bài toán thực tế"></a>Bài toán thực tế</h3><h4 id="Phan-loai-hoa-voi-tap-du-lieu-iris"><a href="#Phan-loai-hoa-voi-tap-du-lieu-iris" class="headerlink" title="Phân loại hoa với tập dữ liệu iris"></a>Phân loại hoa với <a target="_blank" rel="noopener" href="https://archive.ics.uci.edu/ml/datasets/iris">tập dữ liệu iris</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">from sklearn.datasets import load_iris</span><br><span class="line">from sklearn.tree import DecisionTreeClassifier</span><br><span class="line"></span><br><span class="line"># load dữ liệu iris</span><br><span class="line">iris &#x3D; load_iris()</span><br><span class="line"></span><br><span class="line"># chia tập dữ liệu thành  </span><br><span class="line">X &#x3D; iris.data[:, 2:] # petal length and width</span><br><span class="line">y &#x3D; iris.target</span><br><span class="line"></span><br><span class="line">tree_clf &#x3D; DecisionTreeClassifier(max_depth&#x3D;2)</span><br><span class="line">tree_clf.fit(X, y)</span><br></pre></td></tr></table></figure>
+
       </div>
       
         <div class="prev-or-next">
@@ -156,6 +157,18 @@ MathJax = {
       
     </div>
     
+  <div class="post-catalog" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Bai-toan-thuc-te"><span class="toc-text">Bài toán thực tế</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Phan-loai-hoa-voi-tap-du-lieu-iris"><span class="toc-text">Phân loại hoa với tập dữ liệu iris</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
 
     
       <div class="comments-container">
