@@ -188,12 +188,17 @@ MathJax = {
 <p>Cây quyết định cho bài toán hồi quy khá giống với phân loại, ngoại trừ:</p>
 <ul>
 <li><p><strong>gini</strong> được thay bằng <strong>MSE</strong></p>
-<p>  Công thức tính <strong>MSE</strong> cho node $i$ như sau: $MSE_i = \sum_{i\in node}(y)^2$</p>
+<p>  Công thức tính <strong>MSE</strong> cho node $i$ như sau: $MSE_i = \sum_{i\in node}(y_i - \bar{y})^2$</p>
+<p>  Trong đó: </p>
+<ul>
+<li>$y_i$ là label của từng phần tử trong node</li>
+<li>$\bar{y} = \frac{1}{tổng\ số \ phần\ tử\ của\ node}\sum_{i\in node}y_i$</li>
+</ul>
 </li>
-<li><p>class thì thay bằng value</p>
+<li><p>thay vì dự đoán class, thì là value</p>
 </li>
 </ul>
-<h3 id="Tai-lieu-tham-khao"><a href="#Tai-lieu-tham-khao" class="headerlink" title="Tài liệu tham khảo"></a>Tài liệu tham khảo</h3><p>[1] Aurlien Gron. 2017. Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems (1st. ed.). O’Reilly Media, Inc.<br>[2] Brownlee, J. (2016) Machine Learning Mastery with Python. Machine Learning Mastery, EBook.<br>[3] <a target="_blank" rel="noopener" href="https://towardsdatascience.com/decision-trees-in-machine-learning-641b9c4e8052">https://towardsdatascience.com/decision-trees-in-machine-learning-641b9c4e8052</a></p>
+<h3 id="Tai-lieu-tham-khao"><a href="#Tai-lieu-tham-khao" class="headerlink" title="Tài liệu tham khảo"></a>Tài liệu tham khảo</h3><p>[1] Aurlien Gron. 2020. Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems (2nd. ed.). O’Reilly Media, Inc.<br>[2] Brownlee, J. (2016) Machine Learning Mastery with Python. Machine Learning Mastery, EBook.<br>[3] <a target="_blank" rel="noopener" href="https://towardsdatascience.com/decision-trees-in-machine-learning-641b9c4e8052">https://towardsdatascience.com/decision-trees-in-machine-learning-641b9c4e8052</a></p>
 
       </div>
       
