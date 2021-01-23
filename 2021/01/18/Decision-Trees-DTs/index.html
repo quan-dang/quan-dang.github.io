@@ -162,7 +162,7 @@ MathJax = {
 <p><img src="/2021/01/18/Decision-Trees-DTs/iris-tree.png" alt="iris tree"></p>
 <p><strong>Giải thích cây quyết định:</strong> </p>
 <ul>
-<li><p>Bắt đầu từ node trên cùng (hay node root), với điều kiện $petal\ width \leq 0.8$, dữ liệu nào thỏa mãn điều kiện sẽ đi về nhánh trái, dữ liệu nào không thì sẽ đi về nhánh phải. Node màu cam không có nhánh con nào nên được gọi là node lá, và dữ liệu ở node này sẽ được kết luận luôn là thuộc class setosa. Node màu xám (có nhánh con nên được gọi là node phân chia hay splitting node) tiếp tục phân chia tập dữ liệu thuộc node này về 2 node xanh và tím dựa trên điều kiện $petal\ length \leq 4.75$</p>
+<li><p>Bắt đầu từ node trên cùng (hay node root), với điều kiện $petal\ width \leq 0.8$, dữ liệu nào thỏa mãn điều kiện sẽ đi về nhánh trái, còn lại sẽ đi về nhánh phải. Node màu cam không có nhánh con nào nên được gọi là node lá, và dữ liệu ở node này sẽ được kết luận luôn là thuộc class setosa. Node màu xám (có nhánh con nên được gọi là node phân chia hay splitting node) tiếp tục phân chia tập dữ liệu thuộc node này về 2 node xanh và tím dựa trên điều kiện $petal\ length \leq 4.75$</p>
 </li>
 <li><p>Một số thông tin khác của node bao gồm:</p>
 <ul>
@@ -175,7 +175,7 @@ MathJax = {
 </li>
 </ul>
 </li>
-<li><p>samples: số lượng dữ liệu training ứng thuộc node</p>
+<li><p>samples: số lượng dữ liệu training thuộc node</p>
 </li>
 <li><p>value: số lượng dữ liệu của từng class trong node, ví dụ node tím có 0 setosa, 5 versicolor và 38 virginica </p>
 </li>
@@ -195,10 +195,22 @@ MathJax = {
 <li>$\bar{y} = \frac{1}{tổng\ số \ phần\ tử\ của\ node}\sum_{i\in node}y_i$</li>
 </ul>
 </li>
-<li><p>thay vì dự đoán class, thì là value</p>
+<li><p>dự đoán value, thay vì class</p>
 </li>
 </ul>
-<h3 id="Phuong-phap-CART"><a href="#Phuong-phap-CART" class="headerlink" title="Phương pháp CART"></a>Phương pháp CART</h3><h3 id="Cach-tune-tham-so"><a href="#Cach-tune-tham-so" class="headerlink" title="Cách tune tham số"></a>Cách tune tham số</h3><h3 id="Tai-lieu-tham-khao"><a href="#Tai-lieu-tham-khao" class="headerlink" title="Tài liệu tham khảo"></a>Tài liệu tham khảo</h3><p>[1] Aurlien Gron. 2020. Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems (2nd. ed.). O’Reilly Media, Inc.<br>[2] Brownlee, J. (2016) Machine Learning Mastery with Python. Machine Learning Mastery, EBook.<br>[3] <a target="_blank" rel="noopener" href="https://towardsdatascience.com/decision-trees-in-machine-learning-641b9c4e8052">https://towardsdatascience.com/decision-trees-in-machine-learning-641b9c4e8052</a></p>
+<h3 id="Phuong-phap-CART"><a href="#Phuong-phap-CART" class="headerlink" title="Phương pháp CART"></a>Phương pháp CART</h3><ol>
+<li><p>Bước 1: chia tập dữ liệu thành 2 tập con sử dụng feature $k$ và giá trị $t_k$, sao cho hàm cost dưới đây là nhỏ nhất<br> $J(k,t_k)=\frac{m_trái}{m}G_trái+\frac{m_phải}{m}G_phải$</p>
+<p> Trong đó:</p>
+<ul>
+<li>$m_trái$ và $m_phải$ là số lượng dữ liệu của 2 node trái và phải (2 tập con)</li>
+<li>$m$ là số lượng dữ liệu ở node hiện tại</li>
+<li>$G_trái$ và $G_phải$ là <strong>gini</strong> của 2 node trái và phải</li>
+</ul>
+</li>
+<li><p>Bước 2: tiếp tục phân chia các tập con sử dụng logic tương tự bước trên, cho tới khi thỏa mãn điều kiện dừng</p>
+</li>
+</ol>
+<h3 id="Tai-lieu-tham-khao"><a href="#Tai-lieu-tham-khao" class="headerlink" title="Tài liệu tham khảo"></a>Tài liệu tham khảo</h3><p>[1] Aurlien Gron. 2020. Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems (2nd. ed.). O’Reilly Media, Inc.<br>[2] Brownlee, J. (2016) Machine Learning Mastery with Python. Machine Learning Mastery, EBook.<br>[3] <a target="_blank" rel="noopener" href="https://towardsdatascience.com/decision-trees-in-machine-learning-641b9c4e8052">https://towardsdatascience.com/decision-trees-in-machine-learning-641b9c4e8052</a></p>
 
       </div>
       
@@ -240,7 +252,7 @@ MathJax = {
   <div class="post-catalog" id="catalog">
     <div class="title">Contents</div>
     <div class="catalog-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Bai-toan-thuc-te"><span class="toc-text">Bài toán thực tế</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Phan-loai-hoa-voi-tap-du-lieu-iris"><span class="toc-text">Phân loại hoa với tập dữ liệu iris</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Du-doan-gia-nha-voi-tap-du-lieu-boston"><span class="toc-text">Dự đoán giá nhà với tập dữ liêu boston</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Y-tuong-thuat-toan"><span class="toc-text">Ý tưởng thuật toán</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Phan-loai"><span class="toc-text">Phân loại</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hoi-quy"><span class="toc-text">Hồi quy</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Phuong-phap-CART"><span class="toc-text">Phương pháp CART</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cach-tune-tham-so"><span class="toc-text">Cách tune tham số</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tai-lieu-tham-khao"><span class="toc-text">Tài liệu tham khảo</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Bai-toan-thuc-te"><span class="toc-text">Bài toán thực tế</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Phan-loai-hoa-voi-tap-du-lieu-iris"><span class="toc-text">Phân loại hoa với tập dữ liệu iris</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Du-doan-gia-nha-voi-tap-du-lieu-boston"><span class="toc-text">Dự đoán giá nhà với tập dữ liêu boston</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Y-tuong-thuat-toan"><span class="toc-text">Ý tưởng thuật toán</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Phan-loai"><span class="toc-text">Phân loại</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hoi-quy"><span class="toc-text">Hồi quy</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Phuong-phap-CART"><span class="toc-text">Phương pháp CART</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tai-lieu-tham-khao"><span class="toc-text">Tài liệu tham khảo</span></a></li></ol>
     </div>
   </div>
 
