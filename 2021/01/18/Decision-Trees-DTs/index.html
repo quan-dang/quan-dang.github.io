@@ -207,11 +207,10 @@ MathJax = {
 <li>$G_trái$ và $G_phải$ là <strong>gini</strong> của 2 node trái và phải</li>
 </ul>
 </li>
-<li><p>Bước 2: tiếp tục phân chia các tập con sử dụng logic tương tự bước trên, cho tới khi thỏa mãn điều kiện dừng</p>
-<p> Trong đó điều kiện dừng có thể là:</p>
+<li><p>Bước 2: tiếp tục phân chia các tập con sử dụng logic tương tự bước trên, cho tới khi thỏa mãn điều kiện dừng, ví dụ như:</p>
 <ul>
 <li>đạt độ sâu tối đa (quy định bởi hyperparameter <strong>max_depth</strong>)</li>
-<li>không tiếp tục thể phân chia sao cho <strong>gini</strong> của các tập con nhỏ hơn tập gốc</li>
+<li>không thể phân chia sao cho <strong>gini</strong> của các tập con nhỏ hơn tập gốc</li>
 </ul>
 </li>
 </ol>
