@@ -199,12 +199,12 @@ MathJax = {
 </li>
 </ul>
 <h3 id="Phuong-phap-CART"><a href="#Phuong-phap-CART" class="headerlink" title="Phương pháp CART"></a>Phương pháp CART</h3><ol>
-<li><p>Bước 1: chia tập dữ liệu thành 2 tập con sử dụng feature $k$ và giá trị $t_k$, sao cho hàm cost dưới đây là nhỏ nhất<br> $J(k,t_k)=\frac{m_trái}{m}G_trái+\frac{m_phải}{m}G_phải$</p>
+<li><p>Bước 1: chia tập dữ liệu thành 2 tập con sử dụng feature $k$ và giá trị $t_k$, sao cho hàm cost dưới đây là nhỏ nhất<br> $J(k,t_k)=\frac{m_{trái}}{m}G_{trái}+\frac{m_{phải}}{m}G_{phải}$</p>
 <p> Trong đó:</p>
 <ul>
-<li>$m_trái$ và $m_phải$ là số lượng dữ liệu của 2 node trái và phải (2 tập con)</li>
+<li>$m_{trái}$ và $m_{phải}$ là số lượng dữ liệu của 2 node trái và phải (2 tập con)</li>
 <li>$m$ là số lượng dữ liệu ở node hiện tại</li>
-<li>$G_trái$ và $G_phải$ là <strong>gini</strong> của 2 node trái và phải</li>
+<li>$G_{trái}$ và $G_{phải}$ là <strong>gini</strong> của 2 node trái và phải</li>
 </ul>
 </li>
 <li><p>Bước 2: tiếp tục phân chia các tập con sử dụng logic tương tự bước trên, cho tới khi thỏa mãn điều kiện dừng, ví dụ như:</p>
