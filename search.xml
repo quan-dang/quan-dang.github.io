@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>System-Overview</title>
+      <link href="2021/04/26/System-Overview/"/>
+      <url>2021/04/26/System-Overview/</url>
+      
+        <content type="html"><![CDATA[<div style="text-align: center"> Có nhiều cách triển khai một hệ thống Machine Learning. Có những hệ thống chỉ đơn thuần là một Web API, nhận vào một record ID, và trả về kết quả tương ứng đã được dự đoán từ trước (pre-compute). Có những hệ thống phức tạp hơn, bao gồm cả các thành phần để theo dõi model, theo dõi hệ thống, đánh giá data đầu vào, vân vân và mây mây v.v... Hôm nay mình xin chia sẻ một số kiến trúc cơ bản mà mình thường lấy làm cơ sở để phát triển các hệ thống Machine Learning. Tài liệu này được đúc rút ra từ chính kinh nghiệm và quá trình học hỏi của bản thân, do đó không tránh khỏi thiếu sót, mong các bạn thông cảm, và tích cực đóng góp ý kiến.</div><p><img src="https://miro.medium.com/max/1000/1*SoA2-16rMISDOF3OGNjWiA.jpeg" alt="ML meme"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> system design </tag>
+            
+            <tag> ML System </tag>
+            
+            <tag> AI System </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Knowledge Distillation với PyTorch</title>
       <link href="2021/01/24/Knowledge-Distillation-voi-PyTorch/"/>
       <url>2021/01/24/Knowledge-Distillation-voi-PyTorch/</url>

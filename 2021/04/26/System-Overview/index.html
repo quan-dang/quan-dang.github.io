@@ -11,7 +11,7 @@
   
   <title>
     
-      archive_a: 2021/1 
+      System-Overview 
       
       
       |
@@ -95,50 +95,153 @@
 
 
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2021</span>
-          </h2>
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">System-Overview</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="Update time"></i>
+          2021-04-26 13:24:54
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags" title="Tags"></i>
+                
+                <span class="span--tag">
+                  <a href="/tags/system-design/" title="system design">
+                    <b>#</b> system design
+                  </a>
+                </span>
+                
+                <span class="span--tag">
+                  <a href="/tags/ML-System/" title="ML System">
+                    <b>#</b> ML System
+                  </a>
+                </span>
+                
+                <span class="span--tag">
+                  <a href="/tags/AI-System/" title="AI System">
+                    <b>#</b> AI System
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <div style="text-align: center"> Có nhiều cách triển khai một hệ thống Machine Learning. Có những hệ thống chỉ đơn thuần là một Web API, nhận vào một record ID, và trả về kết quả tương ứng đã được dự đoán từ trước (pre-compute). Có những hệ thống phức tạp hơn, bao gồm cả các thành phần để theo dõi model, theo dõi hệ thống, đánh giá data đầu vào, vân vân và mây mây v.v... Hôm nay mình xin chia sẻ một số kiến trúc cơ bản mà mình thường lấy làm cơ sở để phát triển các hệ thống Machine Learning. Tài liệu này được đúc rút ra từ chính kinh nghiệm và quá trình học hỏi của bản thân, do đó không tránh khỏi thiếu sót, mong các bạn thông cảm, và tích cực đóng góp ý kiến.
+</div>
+
+<p><img src="https://miro.medium.com/max/1000/1*SoA2-16rMISDOF3OGNjWiA.jpeg" alt="ML meme"></p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2021/01/24/Knowledge-Distillation-voi-PyTorch/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime" title="Update time"></i>
+              2021-04-26 13:24:54
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags" title="Tags"></i>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/system-design/" title="system design">
+                        <b>#</b> system design
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/ML-System/" title="ML System">
+                        <b>#</b> ML System
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/AI-System/" title="AI System">
+                        <b>#</b> AI System
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
         </div>
       
-      <div class="post-item" title="System-Overview">
-        <div class="time-m-d">04-26</div>
-        <div class="title">
-          <a href="/2021/04/26/System-Overview/">
-            <span>System-Overview</span>
-          </a>
-        </div>
-      </div>
+    </div>
     
-      <div class="post-item" title="Knowledge Distillation với PyTorch">
-        <div class="time-m-d">01-24</div>
-        <div class="title">
-          <a href="/2021/01/24/Knowledge-Distillation-voi-PyTorch/">
-            <span>Knowledge Distillation với PyTorch</span>
-          </a>
-        </div>
-      </div>
+
     
-      <div class="post-item" title="Decision Trees">
-        <div class="time-m-d">01-18</div>
-        <div class="title">
-          <a href="/2021/01/18/Decision-Trees-DTs/">
-            <span>Decision Trees</span>
-          </a>
-        </div>
+      <div class="comments-container">
+        
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://quan-dang.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
       </div>
     
   </div>
-</div>
+
 
         <div class="footer">
   <div class="social">

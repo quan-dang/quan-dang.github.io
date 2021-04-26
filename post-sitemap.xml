@@ -9,8 +9,16 @@
 
 
     <url>
+        <loc>http://quan-dang.github.io/2021/04/26/System-Overview/</loc>
+        <lastmod>2021-04-26T06:51:21.594Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://quan-dang.github.io/2021/01/24/Knowledge-Distillation-voi-PyTorch/</loc>
-        <lastmod>2021-01-31T02:56:38.623Z</lastmod>
+        <lastmod>2021-01-31T02:56:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -18,7 +26,7 @@
 
     <url>
         <loc>http://quan-dang.github.io/2021/01/18/Decision-Trees-DTs/</loc>
-        <lastmod>2021-01-27T14:36:57.235Z</lastmod>
+        <lastmod>2021-01-27T14:36:57.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
