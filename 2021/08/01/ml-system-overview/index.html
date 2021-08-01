@@ -144,7 +144,12 @@ MathJax = {
 <li>Thực hiện unit test để đảm bảo tính chính xác của các hàm riêng lẻ </li>
 <li>Thực hiện integration test để khi kết hợp các hàm với nhau không xảy ra vấn đề gì</li>
 <li>Test training pipeline với dữ liệu staging (dữ liệu giả, hoặc lấy một phần dữ liêụ production) để xem có lỗi không<br>  <strong>Ví dụ:</strong> Lỗi pipeline không trả ra model, lỗi thiếu quyền truy cập vào các tài nguyên cloud (GCS,S3), …</li>
-<li>Test luồng từ khi model được upload lên model registry cho tới khi serve model để đảm bảo model được deploy thành công<br>  <strong>Ví dụ:</strong> Online serving có thể serve được request, trả ra kết quả đúng như dự đoán.<h3 id="2-Moi-truong-production"><a href="#2-Moi-truong-production" class="headerlink" title="2. Môi trường production"></a>2. Môi trường production</h3></li>
+<li>Test luồng từ khi model được upload lên model registry cho tới khi serve model<br>  <strong>Ví dụ:</strong> Online serving có serve được request và trả ra kết quả đúng như dự đoán không</li>
+</ul>
+<h3 id="2-Moi-truong-production"><a href="#2-Moi-truong-production" class="headerlink" title="2. Môi trường production"></a>2. Môi trường production</h3><p><strong>Mục đích:</strong></p>
+<ul>
+<li>Đưa toàn bộ code của training pipeline và serving (các thành phần bên trong ô có viền xanh dương nét đứt) lên production</li>
+<li>Thực hiện train với dữ liệu production, và retrain tuỳ theo bài toán</li>
 </ul>
 
       </div>
