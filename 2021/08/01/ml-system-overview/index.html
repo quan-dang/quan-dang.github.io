@@ -140,7 +140,7 @@ MathJax = {
 
 <p>Ở đây, ngoài môi trường để Data Scientist (DS) thử nghiệm model, mình dùng thêm 2 môi trường là staging và production.</p>
 <h3 id="1-Moi-truong-staging"><a href="#1-Moi-truong-staging" class="headerlink" title="1. Môi trường staging"></a>1. Môi trường staging</h3><ul>
-<li>Thực hiện unit test để đảm bảo tính chính xác của các hàm riêng lẻ </li>
+<li>Thực hiện unit test để đảm bảo tính chính xác của các hàm riêng lẻ</li>
 <li>Thực hiện integration test để khi kết hợp các hàm với nhau không xảy ra vấn đề gì</li>
 <li>Test training pipeline với dữ liệu staging (dữ liệu giả, hoặc lấy một phần dữ liêụ production) để xem có lỗi không<br>  <strong>Ví dụ:</strong> Lỗi pipeline không trả ra model, lỗi thiếu quyền truy cập vào các tài nguyên cloud (GCS,S3), …</li>
 <li>Test luồng từ khi model được upload lên model registry cho tới khi serve model<br>  <strong>Ví dụ:</strong> Online serving có serve được request và trả ra kết quả đúng như dự đoán không</li>
@@ -158,11 +158,11 @@ MathJax = {
 </ul>
 </li>
 <li>Monitor hệ thống<br>  <strong>Ví dụ:</strong> monitor tình trạng CPU, GPU để scale tài nguyên lên hoặc xuống cho phù hợp, hoặc monitor thời gian phản hồi của model xem có bị chậm không</li>
-<li>Monitor model: sử dụng log của bước dự đoán, kết hợp cùng dữ liệu có sẵn (ví dụ label cho user) để đánh giá xem model đã bị giảm performance chưa, hoặc có sự biến đổi nhiều trong phân bố của kết quả dự đoán không, vân vân và mây mây.</li>
+<li>Monitor model: sử dụng log của bước dự đoán, kết hợp cùng dữ liệu có sẵn (ví dụ label cho user) để đánh giá xem model đã bị giảm performance chưa, hoặc có sự biến đổi nhiều trong phân bố của kết quả dự đoán không, vân vân và mây mây</li>
 </ul>
 <h3 id="3-Ket-luan"><a href="#3-Ket-luan" class="headerlink" title="3. Kết luận"></a>3. Kết luận</h3><ul>
-<li> Hệ thống ML không chỉ đơn giản là làm xong một Web API rồi ném đấy. Mình cần xem xét các yếu tố khác, ví dụ như làm sao để quá trình từ lúc model còn đang ở môi trường research lên môi trường production nhanh nhất, hoặc khi nào thì cần thay thế một model đang trên production rồi, và thay thế như nào để giảm downtime, và nhiều thứ khác.</li>
-<li>Tuỳ từng yêu cầu bài toàn, mà hệ thống ML sẽ được phát triển theo các hướng khác nhau, với các thành phần khác nhau, do đó nên xác định rõ yêu cầu và timeline từ đầu, để có định hướng xây dựng hệ thống phù hợp.</li>
+<li> Hệ thống ML không chỉ đơn giản là làm xong một Web API rồi ném đấy. Mình cần xem xét các yếu tố khác, ví dụ như làm sao để quá trình từ lúc model còn đang ở môi trường research lên môi trường production nhanh nhất, hoặc khi nào thì cần thay thế một model đang trên production rồi, và thay thế như nào để giảm downtime, và nhiều thứ khác</li>
+<li>Tuỳ từng yêu cầu bài toàn, mà hệ thống ML sẽ được phát triển theo các hướng khác nhau, với các thành phần khác nhau, do đó nên xác định rõ yêu cầu và timeline từ đầu, để có định hướng xây dựng hệ thống phù hợp</li>
 </ul>
 <p>Bài viết đã dài phết rồi, mình xin được dừng bút tại đây. Mình sẽ cố gắng viết cụ thể hơn về từng thành phần trong các bài sau, mọi người nhớ đón đọc và thả tim nha. Cảm ơn mọi người và chúc mọi người giữ vững sức khoẻ trong mùa dịch :D.</p>
 
