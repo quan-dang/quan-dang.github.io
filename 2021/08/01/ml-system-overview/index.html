@@ -136,7 +136,7 @@ MathJax = {
 <img src="sad-smile.jpeg" alt="ML system overview meme" width="300" height="200" />
 
 <p>Do tính tình bộc trực thẳng thắn nên mình xin phép đi thẳng vào vấn đề chính bằng cách ném toẹt bức ảnh tổng quan về hệ thống ML ở đây luôn.</p>
-<img src="ml-sys.png" alt="ML system overview" width="650" height="500" />
+<img src="ml-sys.png" alt="ML system overview" width="630" height="500" />
 
 <p>Ở đây, ngoài môi trường để Data Scientist (DS) thử nghiệm model, mình dùng thêm 2 môi trường là staging và production.</p>
 <ol>
@@ -145,10 +145,15 @@ MathJax = {
 <ul>
 <li>Mục đích:<ul>
 <li>Thực hiện unit test để đảm bảo tính chính xác của các hàm riêng lẻ </li>
-<li>Thực hiện integration test để khi kết hợp các hàm riêng lẻ với nhau không xảy ra vấn đề gì</li>
+<li>Thực hiện integration test để khi kết hợp các hàm với nhau không xảy ra vấn đề gì</li>
+<li>Test training pipeline với dữ liệu staging (dữ liệu giả, hoặc lấy một phần dữ liêụ production) để xem có lỗi không<br>  Ví dụ: Lỗi pipeline không trả ra model, lỗi thiếu quyền truy cập vào các tài nguyên cloud (GCS,S3), …</li>
+<li>Test luồng từ khi model được upload lên model registry cho tới khi serve model để đảm bảo model được deploy thành công<br>  Ví dụ: Online serving có thể serve được request, trả ra kết quả đúng như dự đoán.</li>
 </ul>
 </li>
 </ul>
+<ol start="2">
+<li>Môi trường production</li>
+</ol>
 
       </div>
       
