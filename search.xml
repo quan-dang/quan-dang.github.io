@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Tổng quan về hệ thống Machine Learning</title>
+      <link href="2021/08/01/ml-system-overview/"/>
+      <url>2021/08/01/ml-system-overview/</url>
+      
+        <content type="html"><![CDATA[<p>Hồi mới nhận nhiệm vụ triển khai hệ thống ML, mình cứ nghĩ là chắc build một Web API đơn giản là xong. Tuy nhiên khi thực sự bắt tay vào làm, cộng thêm đọc tài liệu trên trời dưới đất, mình mới chợt nhận ra là “Ôi thôi ngu rồi, API chỉ là một phần nhỏ xíu thôi”. Hy vọng bài viết này giúp mọi người có cái nhìn tổng quan hơn về một hệ thống ML, để khi nhận task đỡ bị shock.<br><img src="/2021/08/01/ml-system-overview/sad-smile.jpeg" alt="ML system overview meme"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Knowledge Distillation với PyTorch</title>
       <link href="2021/01/24/Knowledge-Distillation-voi-PyTorch/"/>
       <url>2021/01/24/Knowledge-Distillation-voi-PyTorch/</url>

@@ -11,7 +11,7 @@
   
   <title>
     
-      Archives 
+      Tổng quan về hệ thống Machine Learning 
       
       
       |
@@ -95,50 +95,104 @@
 
 
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2021</span>
-          </h2>
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">Tổng quan về hệ thống Machine Learning</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="Update time"></i>
+          2021-08-01 15:16:50
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <p>Hồi mới nhận nhiệm vụ triển khai hệ thống ML, mình cứ nghĩ là chắc build một Web API đơn giản là xong. Tuy nhiên khi thực sự bắt tay vào làm, cộng thêm đọc tài liệu trên trời dưới đất, mình mới chợt nhận ra là “Ôi thôi ngu rồi, API chỉ là một phần nhỏ xíu thôi”. Hy vọng bài viết này giúp mọi người có cái nhìn tổng quan hơn về một hệ thống ML, để khi nhận task đỡ bị shock.<br><img src="/2021/08/01/ml-system-overview/sad-smile.jpeg" alt="ML system overview meme"></p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2021/01/24/Knowledge-Distillation-voi-PyTorch/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime" title="Update time"></i>
+              2021-08-01 15:16:50
+            </span>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
         </div>
       
-      <div class="post-item" title="Tổng quan về hệ thống Machine Learning">
-        <div class="time-m-d">08-01</div>
-        <div class="title">
-          <a href="/2021/08/01/ml-system-overview/">
-            <span>Tổng quan về hệ thống Machine Learning</span>
-          </a>
-        </div>
-      </div>
+    </div>
     
-      <div class="post-item" title="Knowledge Distillation với PyTorch">
-        <div class="time-m-d">01-24</div>
-        <div class="title">
-          <a href="/2021/01/24/Knowledge-Distillation-voi-PyTorch/">
-            <span>Knowledge Distillation với PyTorch</span>
-          </a>
-        </div>
-      </div>
+
     
-      <div class="post-item" title="Decision Trees">
-        <div class="time-m-d">01-18</div>
-        <div class="title">
-          <a href="/2021/01/18/Decision-Trees-DTs/">
-            <span>Decision Trees</span>
-          </a>
-        </div>
+      <div class="comments-container">
+        
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://quan-dang.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
       </div>
     
   </div>
-</div>
+
 
         <div class="footer">
   <div class="social">
