@@ -3,8 +3,15 @@
 
 
     <url>
-        <loc>http://quan-dang.github.io/tags/machine-learning-system-mlops/</loc>
-        <lastmod>2021-08-01T11:49:13.235Z</lastmod>
+        <loc>http://quan-dang.github.io/tags/mlops/</loc>
+        <lastmod>2021-08-01T11:51:02.453Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://quan-dang.github.io/tags/machine-learning-system/</loc>
+        <lastmod>2021-08-01T11:51:02.453Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
