@@ -152,14 +152,19 @@ MathJax = {
 <li>Serving metadata: thông tin các model đang được serve hiện tại, hoặc model đang A/B test</li>
 </ul>
 </li>
-<li>Trả về kết quả dự đoán (có thể kèm giải thích cho dự đoán tuỳ model và bài toán) cho user, và lưu lại log để phân tích thêm sau này<br>  Có 2 cách thức serve phổ biến<ul>
+<li>Trả về kết quả dự đoán (có thể kèm giải thích cho dự đoán tuỳ model và bài toán) cho user, và lưu lại log để phân tích thêm<br>  Có 2 cách thức serve phổ biến<ul>
 <li>Online serving: dự đoán mỗi khi có request đến</li>
-<li>Offline batch serving: dự đoán trên toàn bộ dữ liệu, và mỗi khi có request, chỉ cần trả query kết quả dự đoán tương ứng và trả về</li>
+<li>Offline batch serving: dự đoán trên toàn bộ dữ liệu, và mỗi khi có request, chỉ cần trả query kết quả dự đoán tương ứng</li>
 </ul>
 </li>
-<li>Monitor hệ thống<br>  <strong>Ví dụ:</strong> monitor tình trạng CPU, GPU để scale tài nguyên lên hoặc xuống cho phù hợp, hoặc monitor tốc độ phản hồi của model</li>
+<li>Monitor hệ thống<br>  <strong>Ví dụ:</strong> monitor tình trạng CPU, GPU để scale tài nguyên lên hoặc xuống cho phù hợp, hoặc monitor thời gian phản hồi của model xem có bị chậm không</li>
 <li>Monitor model: sử dụng log của bước dự đoán, kết hợp cùng dữ liệu có sẵn (ví dụ label cho user) để đánh giá xem model đã bị giảm performance chưa, hoặc có sự biến đổi nhiều trong phân bố của kết quả dự đoán không, vân vân và mây mây.</li>
 </ul>
+<h3 id="3-Ket-luan"><a href="#3-Ket-luan" class="headerlink" title="3. Kết luận"></a>3. Kết luận</h3><ul>
+<li> Hệ thống ML không chỉ đơn giản là làm xong một Web API rồi ném đấy. Mình cần xem xét các yếu tố khác, ví dụ như làm sao để quá trình từ lúc model còn đang ở môi trường research lên môi trường production nhanh nhất, hoặc khi nào thì cần thay thế một model đang trên production rồi, và thay thế như nào để giảm downtime, và nhiều thứ khác.</li>
+<li>Tuỳ từng yêu cầu bài toàn, mà hệ thống ML sẽ được phát triển theo các hướng khác nhau, với các thành phần khác nhau, do đó nên xác định rõ yêu cầu và timeline từ đầu, để có định hướng xây dựng hệ thống phù hợp.</li>
+</ul>
+<p>Bài viết đã dài phết rồi, mình xin được dừng bút tại đây. Mình sẽ cố gắng viết cụ thể hơn về từng thành phần trong các bài sau, mọi người nhớ đón đọc và thả tim nha. Cảm ơn mọi người và chúc mọi người giữ vững sức khoẻ trong mùa dịch :D.</p>
 
       </div>
       
@@ -189,7 +194,7 @@ MathJax = {
   <div class="post-catalog" id="catalog">
     <div class="title">Contents</div>
     <div class="catalog-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Moi-truong-staging"><span class="toc-text">1. Môi trường staging</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Moi-truong-production"><span class="toc-text">2. Môi trường production</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Moi-truong-staging"><span class="toc-text">1. Môi trường staging</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Moi-truong-production"><span class="toc-text">2. Môi trường production</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Ket-luan"><span class="toc-text">3. Kết luận</span></a></li></ol>
     </div>
   </div>
 
