@@ -11,7 +11,7 @@
   
   <title>
     
-      archive_a: 2021/8 
+      Kiểm thử một hệ thống ML 
       
       
       |
@@ -95,59 +95,163 @@
 
 
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2021</span>
-          </h2>
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">Kiểm thử một hệ thống ML</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="Update time"></i>
+          2021-08-22 15:12:21
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags" title="Tags"></i>
+                
+                <span class="span--tag">
+                  <a href="/tags/mlops/" title="mlops">
+                    <b>#</b> mlops
+                  </a>
+                </span>
+                
+                <span class="span--tag">
+                  <a href="/tags/ml-testing/" title="ml-testing">
+                    <b>#</b> ml-testing
+                  </a>
+                </span>
+                
+                <span class="span--tag">
+                  <a href="/tags/testing/" title="testing">
+                    <b>#</b> testing
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <p>Xin chào mọi người, lại là mình đây, hôm nay chúng mình cùng tìm hiểu về vấn đề kiểm thử một hệ thống ML nha!<br>Thêm cái meme trước khi bắt đầu bài viết như mọi khi nào.<br><img src="ml-testing-meme.png" alt="ML testing" width="630" height="500" /></p>
+<h3 id="Tai-lieu-tham-khao"><a href="#Tai-lieu-tham-khao" class="headerlink" title="Tài liệu tham khảo"></a>Tài liệu tham khảo</h3><p>[1] <a target="_blank" rel="noopener" href="https://serokell.io/blog/machine-learning-testing">https://serokell.io/blog/machine-learning-testing</a><br>[2] <a target="_blank" rel="noopener" href="https://developers.google.com/machine-learning/testing-debugging/common/overview">https://developers.google.com/machine-learning/testing-debugging/common/overview</a><br>[3] Emmanuel Ameisen, Building Machine Learning Powered Applications: Going from Idea to Product</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2021/08/01/ml-system-overview/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime" title="Update time"></i>
+              2021-08-22 15:12:21
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags" title="Tags"></i>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/mlops/" title="mlops">
+                        <b>#</b> mlops
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/ml-testing/" title="ml-testing">
+                        <b>#</b> ml-testing
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/testing/" title="testing">
+                        <b>#</b> testing
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
         </div>
       
-      <div class="post-item" title="Kiểm thử một hệ thống ML">
-        <div class="time-m-d">08-22</div>
-        <div class="title">
-          <a href="/2021/08/22/test-in-ml/">
-            <span>Kiểm thử một hệ thống ML</span>
-          </a>
-        </div>
-      </div>
+    </div>
     
-      <div class="post-item" title="Tổng quan về hệ thống Machine Learning">
-        <div class="time-m-d">08-01</div>
-        <div class="title">
-          <a href="/2021/08/01/ml-system-overview/">
-            <span>Tổng quan về hệ thống Machine Learning</span>
-          </a>
-        </div>
-      </div>
+  <div class="post-catalog" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tai-lieu-tham-khao"><span class="toc-text">Tài liệu tham khảo</span></a></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
     
-      <div class="post-item" title="Knowledge Distillation với PyTorch">
-        <div class="time-m-d">01-24</div>
-        <div class="title">
-          <a href="/2021/01/24/Knowledge-Distillation-voi-PyTorch/">
-            <span>Knowledge Distillation với PyTorch</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Decision Trees">
-        <div class="time-m-d">01-18</div>
-        <div class="title">
-          <a href="/2021/01/18/Decision-Trees-DTs/">
-            <span>Decision Trees</span>
-          </a>
-        </div>
+      <div class="comments-container">
+        
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://quan-dang.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
       </div>
     
   </div>
-</div>
+
 
         <div class="footer">
   <div class="social">

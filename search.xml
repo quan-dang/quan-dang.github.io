@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>Kiểm thử một hệ thống ML</title>
+      <link href="2021/08/22/test-in-ml/"/>
+      <url>2021/08/22/test-in-ml/</url>
+      
+        <content type="html"><![CDATA[<p>Xin chào mọi người, lại là mình đây, hôm nay chúng mình cùng tìm hiểu về vấn đề kiểm thử một hệ thống ML nha!<br>Thêm cái meme trước khi bắt đầu bài viết như mọi khi nào.<br><img src="ml-testing-meme.png" alt="ML testing" width="630" height="500" /></p><h3 id="Tai-lieu-tham-khao"><a href="#Tai-lieu-tham-khao" class="headerlink" title="Tài liệu tham khảo"></a>Tài liệu tham khảo</h3><p>[1] <a href="https://serokell.io/blog/machine-learning-testing">https://serokell.io/blog/machine-learning-testing</a><br>[2] <a href="https://developers.google.com/machine-learning/testing-debugging/common/overview">https://developers.google.com/machine-learning/testing-debugging/common/overview</a><br>[3] Emmanuel Ameisen, Building Machine Learning Powered Applications: Going from Idea to Product</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> mlops </tag>
+            
+            <tag> ml-testing </tag>
+            
+            <tag> testing </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Tổng quan về hệ thống Machine Learning</title>
       <link href="2021/08/01/ml-system-overview/"/>
       <url>2021/08/01/ml-system-overview/</url>
