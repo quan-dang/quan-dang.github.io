@@ -134,12 +134,6 @@ MathJax = {
                 <i class="iconfont icon-tags" title="Tags"></i>
                 
                 <span class="span--tag">
-                  <a href="/tags/mlops/" title="mlops">
-                    <b>#</b> mlops
-                  </a>
-                </span>
-                
-                <span class="span--tag">
                   <a href="/tags/ml-testing/" title="ml-testing">
                     <b>#</b> ml-testing
                   </a>
@@ -148,6 +142,12 @@ MathJax = {
                 <span class="span--tag">
                   <a href="/tags/testing/" title="testing">
                     <b>#</b> testing
+                  </a>
+                </span>
+                
+                <span class="span--tag">
+                  <a href="/tags/mlops/" title="mlops">
+                    <b>#</b> mlops
                   </a>
                 </span>
                 
@@ -208,8 +208,31 @@ MathJax = {
 
 
 <ol start="2">
-<li><strong>Model testing</strong></li>
+<li><strong>Model testing</strong><br>Có thể chia thành 2 loại model testing:</li>
 </ol>
+<ul>
+<li><p>Testing</p>
+<ul>
+<li>Pre-train testing: tìm bug trước khi train/evaluate<ul>
+<li>Kiểm tra xem có data leakage (leak thông tin), ví dụ observation trong tập train cũng có ở tập validation/test</li>
+<li>Kiểm tra xem có feature leakage (feature mang thông tin của label)</li>
+<li>Kiểm tra model output có shape, hoặc có miền giá trị như ý muốn</li>
+</ul>
+</li>
+<li>Post-train testing: model có hoạt động (behave) như ý muốn ở các tình huống (scenarios) khác nhau?<ul>
+<li>Invariance testing: mô tả những thay đổi của input mà không làm thay đổi kết quả dự đoán của model<br>  Ví dụ: trong bài toán sentiment analysis, thì 2 câu sau nên có cùng một output:<ul>
+<li>Bộ phim A hay quá!</li>
+<li>Bộ phim B hay quá!</li>
+</ul>
+</li>
+<li>Directional expectation test: mô tả những thay đổi của input sẽ làm thay đổi kết quả dự đoán của model một cách có thể lường trước.<br>  Ví dụ: trong bài toán dự đoán giá nhà, có thể đoán trước nếu không gian tăng, thì giá nhà sẽ tăng.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Evaluation: đánh giá hiệu quả của model thông qua các metrics như accuracy và F1, … trên tập validation/test.</p>
+</li>
+</ul>
 <h3 id="Tai-lieu-tham-khao"><a href="#Tai-lieu-tham-khao" class="headerlink" title="Tài liệu tham khảo"></a>Tài liệu tham khảo</h3><p>[1] <a target="_blank" rel="noopener" href="https://serokell.io/blog/machine-learning-testing">https://serokell.io/blog/machine-learning-testing</a><br>[2] <a target="_blank" rel="noopener" href="https://developers.google.com/machine-learning/testing-debugging/common/overview">https://developers.google.com/machine-learning/testing-debugging/common/overview</a><br>[3] Emmanuel Ameisen, Building Machine Learning Powered Applications: Going from Idea to Product<br>[4] <a target="_blank" rel="noopener" href="https://www.jeremyjordan.me/testing-ml/">https://www.jeremyjordan.me/testing-ml/</a><br>[5] <a target="_blank" rel="noopener" href="https://homes.cs.washington.edu/~marcotcr/acl20_checklist.pdf">https://homes.cs.washington.edu/~marcotcr/acl20_checklist.pdf</a><br>[6] <a target="_blank" rel="noopener" href="https://fontysblogt.nl/software-engineering-for-machine-learning-applications/">https://fontysblogt.nl/software-engineering-for-machine-learning-applications/</a><br>[7] <a target="_blank" rel="noopener" href="https://futurice.com/blog/differences-between-machine-learning-and-software-engineering">https://futurice.com/blog/differences-between-machine-learning-and-software-engineering</a><br>[8] <a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/differences-between-functional-and-non-functional-testing/">https://www.geeksforgeeks.org/differences-between-functional-and-non-functional-testing/</a><br>[9] <a target="_blank" rel="noopener" href="https://eugeneyan.com/writing/testing-ml/">https://eugeneyan.com/writing/testing-ml/</a></p>
 
       </div>
@@ -233,12 +256,6 @@ MathJax = {
                     <i class="iconfont icon-tags" title="Tags"></i>
                     
                     <span class="span--tag">
-                      <a href="/tags/mlops/" title="mlops">
-                        <b>#</b> mlops
-                      </a>
-                    </span>
-                    
-                    <span class="span--tag">
                       <a href="/tags/ml-testing/" title="ml-testing">
                         <b>#</b> ml-testing
                       </a>
@@ -247,6 +264,12 @@ MathJax = {
                     <span class="span--tag">
                       <a href="/tags/testing/" title="testing">
                         <b>#</b> testing
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/mlops/" title="mlops">
+                        <b>#</b> mlops
                       </a>
                     </span>
                     
