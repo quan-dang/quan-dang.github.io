@@ -134,6 +134,12 @@ MathJax = {
                 <i class="iconfont icon-tags" title="Tags"></i>
                 
                 <span class="span--tag">
+                  <a href="/tags/mlops/" title="mlops">
+                    <b>#</b> mlops
+                  </a>
+                </span>
+                
+                <span class="span--tag">
                   <a href="/tags/ml-testing/" title="ml-testing">
                     <b>#</b> ml-testing
                   </a>
@@ -142,12 +148,6 @@ MathJax = {
                 <span class="span--tag">
                   <a href="/tags/testing/" title="testing">
                     <b>#</b> testing
-                  </a>
-                </span>
-                
-                <span class="span--tag">
-                  <a href="/tags/mlops/" title="mlops">
-                    <b>#</b> mlops
                   </a>
                 </span>
                 
@@ -211,27 +211,36 @@ MathJax = {
 <li><strong>Model testing</strong><br>Có thể chia thành 2 loại model testing:</li>
 </ol>
 <ul>
-<li><p>Testing</p>
+<li><p><strong>Testing</strong></p>
 <ul>
-<li>Pre-train testing: tìm bug trước khi train/evaluate<ul>
+<li><p><strong>Pre-train testing:</strong> tìm bug trước khi train/evaluate</p>
+<ul>
 <li>Kiểm tra xem có data leakage (leak thông tin), ví dụ observation trong tập train cũng có ở tập validation/test</li>
 <li>Kiểm tra xem có feature leakage (feature mang thông tin của label)</li>
 <li>Kiểm tra model output có shape, hoặc có miền giá trị như ý muốn</li>
 </ul>
 </li>
-<li>Post-train testing: model có hoạt động (behave) như ý muốn ở các tình huống (scenarios) khác nhau?<ul>
-<li>Invariance testing: mô tả những thay đổi của input mà không làm thay đổi kết quả dự đoán của model<br>  Ví dụ: trong bài toán sentiment analysis, thì 2 câu sau nên có cùng một output:<ul>
+<li><p><strong>Post-train testing:</strong> hoạt động của model (model behavior) có như ý muốn ở các tình huống (scenarios) khác nhau?</p>
+<ul>
+<li><strong>Invariance testing:</strong> mô tả những thay đổi của input mà không làm thay đổi kết quả dự đoán của model<br>  Ví dụ: trong bài toán sentiment analysis, thì 2 câu sau nên có cùng một output:<ul>
 <li>Bộ phim A hay quá!</li>
 <li>Bộ phim B hay quá!</li>
 </ul>
 </li>
-<li>Directional expectation test: mô tả những thay đổi của input sẽ làm thay đổi kết quả dự đoán của model một cách có thể lường trước.<br>  Ví dụ: trong bài toán dự đoán giá nhà, có thể đoán trước nếu không gian tăng, thì giá nhà sẽ tăng.</li>
+<li><strong>Directional expectation test:</strong> mô tả những thay đổi của input sẽ làm thay đổi kết quả dự đoán của model một cách có thể lường trước.<br>  Ví dụ: trong bài toán dự đoán giá nhà, có thể đoán trước nếu không gian tăng, thì giá nhà sẽ tăng.</li>
+</ul>
+<p>  <strong>Note:</strong> Công cụ <a target="_blank" rel="noopener" href="https://pair-code.github.io/what-if-tool/">What-If</a> hỗ trợ rất tốt trong việc kiểm tra model behavior ở các tình huống khác nhau.</p>
+</li>
 </ul>
 </li>
+<li><p><strong>Evaluation:</strong> đánh giá hiệu quả của model thông qua các metrics như accuracy và F1, … trên tập validation/test.</p>
+</li>
 </ul>
-</li>
-<li><p>Evaluation: đánh giá hiệu quả của model thông qua các metrics như accuracy và F1, … trên tập validation/test.</p>
-</li>
+<h3 id="Mot-so-tool-hay-dung-de-test-va-debug"><a href="#Mot-so-tool-hay-dung-de-test-va-debug" class="headerlink" title="Một số tool hay dùng để test và debug"></a>Một số tool hay dùng để test và debug</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/pdb.html">pdb</a> để debug python code</li>
+<li><a target="_blank" rel="noopener" href="https://docs.pytest.org/en/6.2.x/">pytest</a> là framework hỗ trợ viết code test</li>
+<li><a target="_blank" rel="noopener" href="https://coverage.readthedocs.io/en/coverage-5.5/#:~:text=Coverage.py%20is%20a%20tool,gauge%20the%20effectiveness%20of%20tests.">Coverage.py</a> để xác định đoạn code nào có thể được execute nhưng đã không</li>
+<li><a target="_blank" rel="noopener" href="https://www.pylint.org/">pylint</a> để kiểm tra lỗi cú pháp/logic</li>
 </ul>
 <h3 id="Tai-lieu-tham-khao"><a href="#Tai-lieu-tham-khao" class="headerlink" title="Tài liệu tham khảo"></a>Tài liệu tham khảo</h3><p>[1] <a target="_blank" rel="noopener" href="https://serokell.io/blog/machine-learning-testing">https://serokell.io/blog/machine-learning-testing</a><br>[2] <a target="_blank" rel="noopener" href="https://developers.google.com/machine-learning/testing-debugging/common/overview">https://developers.google.com/machine-learning/testing-debugging/common/overview</a><br>[3] Emmanuel Ameisen, Building Machine Learning Powered Applications: Going from Idea to Product<br>[4] <a target="_blank" rel="noopener" href="https://www.jeremyjordan.me/testing-ml/">https://www.jeremyjordan.me/testing-ml/</a><br>[5] <a target="_blank" rel="noopener" href="https://homes.cs.washington.edu/~marcotcr/acl20_checklist.pdf">https://homes.cs.washington.edu/~marcotcr/acl20_checklist.pdf</a><br>[6] <a target="_blank" rel="noopener" href="https://fontysblogt.nl/software-engineering-for-machine-learning-applications/">https://fontysblogt.nl/software-engineering-for-machine-learning-applications/</a><br>[7] <a target="_blank" rel="noopener" href="https://futurice.com/blog/differences-between-machine-learning-and-software-engineering">https://futurice.com/blog/differences-between-machine-learning-and-software-engineering</a><br>[8] <a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/differences-between-functional-and-non-functional-testing/">https://www.geeksforgeeks.org/differences-between-functional-and-non-functional-testing/</a><br>[9] <a target="_blank" rel="noopener" href="https://eugeneyan.com/writing/testing-ml/">https://eugeneyan.com/writing/testing-ml/</a></p>
 
@@ -256,6 +265,12 @@ MathJax = {
                     <i class="iconfont icon-tags" title="Tags"></i>
                     
                     <span class="span--tag">
+                      <a href="/tags/mlops/" title="mlops">
+                        <b>#</b> mlops
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag">
                       <a href="/tags/ml-testing/" title="ml-testing">
                         <b>#</b> ml-testing
                       </a>
@@ -264,12 +279,6 @@ MathJax = {
                     <span class="span--tag">
                       <a href="/tags/testing/" title="testing">
                         <b>#</b> testing
-                      </a>
-                    </span>
-                    
-                    <span class="span--tag">
-                      <a href="/tags/mlops/" title="mlops">
-                        <b>#</b> mlops
                       </a>
                     </span>
                     
@@ -286,7 +295,7 @@ MathJax = {
   <div class="post-catalog" id="catalog">
     <div class="title">Contents</div>
     <div class="catalog-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Kiem-thu-he-thong-ML-de-nhu-an-banh"><span class="toc-text">Kiểm thử hệ thống ML dễ như ăn bánh?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kiem-thu-he-thong-software-truyen-thong"><span class="toc-text">Kiểm thử hệ thống software truyền thống</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Functional-Testing"><span class="toc-text">Functional Testing</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Non-functional-Testing"><span class="toc-text">Non-functional Testing</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Luong-phat-trien-phan-mem-co-ban"><span class="toc-text">Luồng phát triển phần mềm cơ bản</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#He-thong-ML-can-kiem-thu-nhung-gi"><span class="toc-text">Hệ thống ML cần kiểm thử những gì?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tai-lieu-tham-khao"><span class="toc-text">Tài liệu tham khảo</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Kiem-thu-he-thong-ML-de-nhu-an-banh"><span class="toc-text">Kiểm thử hệ thống ML dễ như ăn bánh?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kiem-thu-he-thong-software-truyen-thong"><span class="toc-text">Kiểm thử hệ thống software truyền thống</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Functional-Testing"><span class="toc-text">Functional Testing</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Non-functional-Testing"><span class="toc-text">Non-functional Testing</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Luong-phat-trien-phan-mem-co-ban"><span class="toc-text">Luồng phát triển phần mềm cơ bản</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#He-thong-ML-can-kiem-thu-nhung-gi"><span class="toc-text">Hệ thống ML cần kiểm thử những gì?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mot-so-tool-hay-dung-de-test-va-debug"><span class="toc-text">Một số tool hay dùng để test và debug</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tai-lieu-tham-khao"><span class="toc-text">Tài liệu tham khảo</span></a></li></ol>
     </div>
   </div>
 
