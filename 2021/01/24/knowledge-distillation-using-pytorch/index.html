@@ -151,7 +151,7 @@ MathJax = {
       <div class="markdown-body">
         <div style="text-align: center"> Knowledge Distillation (KD) là một kỹ thuật nén model (model compression) sao cho độ chính xác (hoặc một thước đo khác như mAP, và F1-score, ...) không thay đổi nhiều so với model gốc. </div>
 
-<p><img src="Knowledge-Distillation-voi-PyTorch/teach-me.jpg" alt="Random Forests meme"></p>
+<p><img src="/2021/01/24/knowledge-distillation-using-pytorch/teach-me.jpg" alt="Random Forests meme"></p>
 <h3 id="Bai-toan-thuc-te"><a href="#Bai-toan-thuc-te" class="headerlink" title="Bài toán thực tế"></a>Bài toán thực tế</h3><p>Nén model phân loại chữ viết tay sử dụng kỹ thuật KD, với bộ dữ liệu <a target="_blank" rel="noopener" href="http://yann.lecun.com/exdb/mnist/">MNIST</a></p>
 <h4 id="Buoc-1-Import-cac-thu-vien-can-thiet"><a href="#Buoc-1-Import-cac-thu-vien-can-thiet" class="headerlink" title="Bước 1: Import các thư viện cần thiết"></a>Bước 1: Import các thư viện cần thiết</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torchvision.datasets <span class="keyword">import</span> MNIST</span><br><span class="line"><span class="keyword">import</span> torchvision.transforms <span class="keyword">as</span> transforms</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line"><span class="keyword">import</span> torch.optim <span class="keyword">as</span> optim</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> vstack</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> accuracy_score</span><br></pre></td></tr></table></figure>
 <h4 id="Buoc-2-Load-du-lieu"><a href="#Buoc-2-Load-du-lieu" class="headerlink" title="Bước 2: Load dữ liệu"></a>Bước 2: Load dữ liệu</h4><p>Ở bước này chúng ta sẽ load bộ dữ liệu MNIST,và biến đổi dữ liệu sao cho model có thể sử dụng được. Lưu ý rằng bộ dữ liệu này có sẵn trong thư viện torchvision rồi, nên chỉ cần load lên mà không cần vào trang chủ của bộ dữ liệu để tải nha. </p>
@@ -175,7 +175,7 @@ MathJax = {
 <table>
 <thead>
 <tr>
-<th align="center"><img src="Knowledge-Distillation-voi-PyTorch/knowledge_distillation.png" alt="Knowledge Distillation"></th>
+<th align="center"><img src="/2021/01/24/knowledge-distillation-using-pytorch/knowledge_distillation.png" alt="Knowledge Distillation"></th>
 </tr>
 </thead>
 <tbody><tr>
@@ -187,7 +187,7 @@ MathJax = {
 <li>Tham số $alpha$ dùng để đánh trọng số (weight) cho $student\ loss$ và $distillation\ loss$.</li>
 <li>Tham số $temperature$ có tác dụng làm phân phối “soft” hơn. Tham số này càng tăng, thì phân phối càng “soft”, như hình dưới đây:</li>
 </ul>
-<p><img src="Knowledge-Distillation-voi-PyTorch/smoothen.png" alt="Smooth Distribution"></p>
+<p><img src="/2021/01/24/knowledge-distillation-using-pytorch/smoothen.png" alt="Smooth Distribution"></p>
 <h3 id="Tai-sao-khong-train-model-hoc-sinh-tu-dau"><a href="#Tai-sao-khong-train-model-hoc-sinh-tu-dau" class="headerlink" title="Tại sao không train model học sinh từ đầu?"></a>Tại sao không train model học sinh từ đầu?</h3><p>Chúng ta hoàn toàn có thể train model học sinh từ đầu, tuy nhiên sẽ khó đạt được kết quả như kỳ vọng. Kỹ thuật KD giúp model học sinh:</p>
 <ul>
 <li>Generalize tốt hơn, do tập train của model giáo viên thông thường sẽ lớn hơn nhiều so với tập train của model học sinh</li>
