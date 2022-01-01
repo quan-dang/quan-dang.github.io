@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>model-serving-using-bentoml</title>
+      <title>Model Serving sử dụng BentoML</title>
       <link href="2021/10/30/model-serving-using-bentoml/"/>
       <url>2021/10/30/model-serving-using-bentoml/</url>
       
-        <content type="html"><![CDATA[<div style="text-align: center"> Khi mà model đã được train xong, và đạt được kết quả như ý muốn, thì đã đến lúc đem đi để phục vụ (serve) các khách hàng. Giai đoạn này được gọi là model serving. </div><p><img src="https://hackernoon.com/hn-images/1*6-ctYxKmTS8v0RzwLILfXA.png" alt="Model serving meme"></p><img src="model-serving-meme.jpeg" alt="Model serving meme" width="500" height="500" />]]></content>
+        <content type="html"><![CDATA[<div style="text-align: center"> Khi mà một model đã được train xong và đạt được kết quả như ý muốn, thì đây chính là lúc đem đi để phục vụ (serve) các khách hàng với dữ liệu thực tế. Giai đoạn này được gọi là model serving. </div><p><img src="https://hackernoon.com/hn-images/1*6-ctYxKmTS8v0RzwLILfXA.png" alt="Model serving meme"></p><img src="model-serving-meme.jpeg" alt="Model serving meme" width="500" height="500" />]]></content>
       
       
       
