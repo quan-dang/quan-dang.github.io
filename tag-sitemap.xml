@@ -3,6 +3,13 @@
 
 
     <url>
+        <loc>http://quan-dang.github.io/tags/model-serving/</loc>
+        <lastmod>2022-01-03T04:23:22.894Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://quan-dang.github.io/tags/model-compression/</loc>
         <lastmod>2022-01-01T07:50:13.109Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -12,13 +19,6 @@
     <url>
         <loc>http://quan-dang.github.io/tags/knowledge-distillation/</loc>
         <lastmod>2022-01-01T07:50:13.109Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://quan-dang.github.io/tags/model-serving/</loc>
-        <lastmod>2022-01-01T07:48:34.374Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

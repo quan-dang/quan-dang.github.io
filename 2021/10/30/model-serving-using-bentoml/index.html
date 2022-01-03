@@ -143,9 +143,46 @@ MathJax = {
           
       </div>
       <div class="markdown-body">
-        <div style="text-align: center"> Khi mà một model đã được train xong và đạt được kết quả như ý muốn, thì đây chính là lúc đem đi để phục vụ (serve) các khách hàng với dữ liệu thực tế. Giai đoạn này được gọi là model serving. </div>
+        <div style="text-align: center"> Khi mà một model đã được train xong và đáp ứng được yêu cầu cả về business lẫn technical, thì đây chính là lúc đem lên môi trường production. Giai đoạn này được gọi là model serving. </div>
 
 <img src="model-serving-meme.jpeg" alt="Model serving meme" width="500" height="500" />
+
+<p>Có nhiều hình thức để serve một model, và cũng có nhiều tool/framework hỗ trợ chúng ta làm điều này.</p>
+<h4 id="1-Cac-hinh-thuc-serving"><a href="#1-Cac-hinh-thuc-serving" class="headerlink" title="1. Các hình thức serving"></a>1. Các hình thức serving</h4><ul>
+<li><strong>Offline serving (batch inference)</strong>: model dự đoán trên cả tập dữ liệu test, và lưu kết quả vào 1 database hoặc storage.</li>
+<li><strong>Model as a service:</strong> đóng gói model thành một service và cung cấp API endpoint cho user. User sẽ tạo POST/GET request tới endpoint này để trigger quá trình model inference, và nhận về kết quả.</li>
+<li><strong>Edge deployment:</strong> chuyển đổi model thành định dạng phù hợp (ví dụ ONNX) để deploy trên các thiết bị edge (ví dụ: browser, Raspberry Pi, Nvidia Jetson Nano, và Google Coral, …)</li>
+</ul>
+<h4 id="2-Khi-nao-thi-dung-hinh-thuc-serving-nao"><a href="#2-Khi-nao-thi-dung-hinh-thuc-serving-nao" class="headerlink" title="2. Khi nào thì dùng hình thức serving nào"></a>2. Khi nào thì dùng hình thức serving nào</h4><table>
+<thead>
+<tr>
+<th align="left">Offline serving</th>
+<th align="center">Model as a service</th>
+<th align="right">Edge deployment</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Header</td>
+<td align="center">Title</td>
+<td align="right">Here’s this</td>
+</tr>
+<tr>
+<td align="left">Paragraph</td>
+<td align="center">Text</td>
+<td align="right">And more</td>
+</tr>
+</tbody></table>
+<h4 id="2-Cac-tool-framework-pho-bien"><a href="#2-Cac-tool-framework-pho-bien" class="headerlink" title="2. Các tool/framework phổ biến"></a>2. Các tool/framework phổ biến</h4><ul>
+<li>BentoML</li>
+<li>Seldon Core</li>
+<li>FastAPI</li>
+<li>Flask</li>
+</ul>
+<h4 id="4-Tai-lieu-tham-khao"><a href="#4-Tai-lieu-tham-khao" class="headerlink" title="4. Tài liệu tham khảo"></a>4. Tài liệu tham khảo</h4><ol>
+<li><a target="_blank" rel="noopener" href="https://spell.ml/blog/mlops-concepts-model-serving-X385lREAACcAAGzS">https://spell.ml/blog/mlops-concepts-model-serving-X385lREAACcAAGzS</a></li>
+<li><a target="_blank" rel="noopener" href="https://mercari.github.io/ml-system-design-pattern">https://mercari.github.io/ml-system-design-pattern</a></li>
+</ol>
+
       </div>
       
         <div class="prev-or-next">
@@ -182,6 +219,18 @@ MathJax = {
       
     </div>
     
+  <div class="post-catalog" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Cac-hinh-thuc-serving"><span class="toc-text">1. Các hình thức serving</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Khi-nao-thi-dung-hinh-thuc-serving-nao"><span class="toc-text">2. Khi nào thì dùng hình thức serving nào</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Cac-tool-framework-pho-bien"><span class="toc-text">2. Các tool&#x2F;framework phổ biến</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Tai-lieu-tham-khao"><span class="toc-text">4. Tài liệu tham khảo</span></a></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
 
     
       <div class="comments-container">
