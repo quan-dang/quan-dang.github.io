@@ -155,17 +155,24 @@ MathJax = {
 <li><strong>Model as a service:</strong> đóng gói model thành một service và cung cấp API endpoint cho user. User sẽ tạo POST/GET request tới endpoint này để trigger quá trình model inference và nhận về kết quả.</li>
 <li><strong>Edge deployment:</strong> chuyển đổi model thành định dạng phù hợp (ví dụ ONNX) để deploy trên các thiết bị edge (ví dụ: browser, Raspberry Pi, Nvidia Jetson Nano, và Google Coral, …)</li>
 </ul>
-<h4 id="2-Khi-nao-thi-dung-hinh-thuc-serving-nao"><a href="#2-Khi-nao-thi-dung-hinh-thuc-serving-nao" class="headerlink" title="2. Khi nào thì dùng hình thức serving nào"></a>2. Khi nào thì dùng hình thức serving nào</h4><img src="model-serving-comparision.png" alt="Model serving comparisions" width="600" height="300">
+<h4 id="2-Khi-nao-thi-dung-hinh-thuc-serving-nao"><a href="#2-Khi-nao-thi-dung-hinh-thuc-serving-nao" class="headerlink" title="2. Khi nào thì dùng hình thức serving nào"></a>2. Khi nào thì dùng hình thức serving nào</h4><img src="model-serving-comparision.png" alt="Model serving comparisions" width="700" height="300">
 
-<h4 id="3-Cac-tool-framework-pho-bien"><a href="#3-Cac-tool-framework-pho-bien" class="headerlink" title="3. Các tool/framework phổ biến"></a>3. Các tool/framework phổ biến</h4><ul>
-<li>BentoML</li>
-<li>Seldon Core</li>
-<li>FastAPI</li>
-<li>Flask</li>
+<h4 id="3-BentoML"><a href="#3-BentoML" class="headerlink" title="3. BentoML"></a>3. BentoML</h4><p>BentoML là một framework hỗ trợ đóng gói và deploy model trên nhiều nền tảng khác nhau, ví dụ:</p>
+<ul>
+<li>Serverless Compute Services như AWS Lambda và Google Cloud Run</li>
+<li>Compute Engine như Amazon EC2</li>
+<li>AI Platform như Amazon SageMaker, VertexAI</li>
+<li>Kubernetes Cluster như Kubeflow</li>
 </ul>
+<p>Bên cạnh đó BentoML cũng cung cấp CLI, Python API và Web UI để quản lý các model trên production.</p>
+<img src="model-serving-meme.jpeg" alt="Model serving meme" width="700" height="300" />
+
+
 <h4 id="4-Tai-lieu-tham-khao"><a href="#4-Tai-lieu-tham-khao" class="headerlink" title="4. Tài liệu tham khảo"></a>4. Tài liệu tham khảo</h4><ol>
 <li><a target="_blank" rel="noopener" href="https://spell.ml/blog/mlops-concepts-model-serving-X385lREAACcAAGzS">https://spell.ml/blog/mlops-concepts-model-serving-X385lREAACcAAGzS</a></li>
 <li><a target="_blank" rel="noopener" href="https://mercari.github.io/ml-system-design-pattern">https://mercari.github.io/ml-system-design-pattern</a></li>
+<li><a target="_blank" rel="noopener" href="https://neptune.ai/blog/ml-model-serving-best-tools">https://neptune.ai/blog/ml-model-serving-best-tools</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/bentoml/BentoML">https://github.com/bentoml/BentoML</a></li>
 </ol>
 
       </div>
@@ -207,7 +214,7 @@ MathJax = {
   <div class="post-catalog" id="catalog">
     <div class="title">Contents</div>
     <div class="catalog-content">
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Cac-hinh-thuc-serving"><span class="toc-text">1. Các hình thức serving</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Khi-nao-thi-dung-hinh-thuc-serving-nao"><span class="toc-text">2. Khi nào thì dùng hình thức serving nào</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Cac-tool-framework-pho-bien"><span class="toc-text">3. Các tool&#x2F;framework phổ biến</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Tai-lieu-tham-khao"><span class="toc-text">4. Tài liệu tham khảo</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Cac-hinh-thuc-serving"><span class="toc-text">1. Các hình thức serving</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Khi-nao-thi-dung-hinh-thuc-serving-nao"><span class="toc-text">2. Khi nào thì dùng hình thức serving nào</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-BentoML"><span class="toc-text">3. BentoML</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Tai-lieu-tham-khao"><span class="toc-text">4. Tài liệu tham khảo</span></a></li></ol>
     </div>
   </div>
 
