@@ -4,7 +4,7 @@
 
     <url>
         <loc>http://quan-dang.github.io/tags/model-serving/</loc>
-        <lastmod>2022-01-16T10:08:58.904Z</lastmod>
+        <lastmod>2022-01-16T10:10:35.535Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -38,13 +38,6 @@
     </url>
 
     <url>
-        <loc>http://quan-dang.github.io/tags/mlops/</loc>
-        <lastmod>2021-08-22T18:00:04.478Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://quan-dang.github.io/tags/testing/</loc>
         <lastmod>2021-08-22T18:00:04.478Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -53,6 +46,13 @@
 
     <url>
         <loc>http://quan-dang.github.io/tags/ml-testing/</loc>
+        <lastmod>2021-08-22T18:00:04.478Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://quan-dang.github.io/tags/mlops/</loc>
         <lastmod>2021-08-22T18:00:04.478Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
