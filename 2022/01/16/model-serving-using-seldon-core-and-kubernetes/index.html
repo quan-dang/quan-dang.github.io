@@ -11,7 +11,7 @@
   
   <title>
     
-      archive_a: 2021/8 
+      Model Serving sử dụng Seldon Core 
       
       
       |
@@ -95,84 +95,104 @@
 
 
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2022</span>
-          </h2>
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">Model Serving sử dụng Seldon Core</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="Update time"></i>
+          2022-01-16 17:21:20
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <p>Như đề cập ở bài blog <a href="https://quan-dang.github.io/2021/10/30/model-serving-using-bentoml/">trước</a>, mặc dù là một framework đơn giản và mạnh mẽ, song BentoML chưa hỗ trợ một số features như horizontal scaling, hay blue-green deployment. Seldon Core có thể được sử dụng như một giải pháp thay thế, tuy nhiên yêu cầu nhiều kiến thức về Devops cũng như Kubernetes.</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2021/10/30/model-serving-using-bentoml/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime" title="Update time"></i>
+              2022-01-16 17:21:20
+            </span>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
         </div>
       
-      <div class="post-item" title="Model Serving sử dụng Seldon Core">
-        <div class="time-m-d">01-16</div>
-        <div class="title">
-          <a href="/2022/01/16/model-serving-using-seldon-core-and-kubernetes/">
-            <span>Model Serving sử dụng Seldon Core</span>
-          </a>
-        </div>
-      </div>
+    </div>
     
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2021</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="Model Serving sử dụng BentoML">
-        <div class="time-m-d">10-30</div>
-        <div class="title">
-          <a href="/2021/10/30/model-serving-using-bentoml/">
-            <span>Model Serving sử dụng BentoML</span>
-          </a>
-        </div>
-      </div>
+
     
-      <div class="post-item" title="Kiểm thử hệ thống Machine Learning">
-        <div class="time-m-d">08-22</div>
-        <div class="title">
-          <a href="/2021/08/22/test-in-ml/">
-            <span>Kiểm thử hệ thống Machine Learning</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Tổng quan về hệ thống Machine Learning">
-        <div class="time-m-d">08-01</div>
-        <div class="title">
-          <a href="/2021/08/01/ml-system-overview/">
-            <span>Tổng quan về hệ thống Machine Learning</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Knowledge Distillation với PyTorch">
-        <div class="time-m-d">01-24</div>
-        <div class="title">
-          <a href="/2021/01/24/knowledge-distillation-using-pytorch/">
-            <span>Knowledge Distillation với PyTorch</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Decision Trees">
-        <div class="time-m-d">01-18</div>
-        <div class="title">
-          <a href="/2021/01/18/decision-trees-dts/">
-            <span>Decision Trees</span>
-          </a>
-        </div>
+      <div class="comments-container">
+        
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://quan-dang.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
       </div>
     
   </div>
-</div>
+
 
         <div class="footer">
   <div class="social">
