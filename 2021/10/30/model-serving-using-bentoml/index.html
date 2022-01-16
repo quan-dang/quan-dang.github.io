@@ -199,8 +199,8 @@ MathJax = {
 <p>Bản chất của command này là sẽ biến input file CSV thành định dạng <em>DataFrame</em>, và sau đó đưa qua hàm <em>predict</em> định nghĩa trong BentoService IrisClassifier. Các bác tham khảo thêm tại <a target="_blank" rel="noopener" href="https://github.com/bentoml/BentoML/blob/0.13-LTS/bentoml/service/inference_api.py#L312">đây</a></p>
 <h3 id="5-Mot-so-luu-y"><a href="#5-Mot-so-luu-y" class="headerlink" title="5. Một số lưu ý"></a>5. Một số lưu ý</h3><h4 id="5-1-Adaptive-Micro-Batching"><a href="#5-1-Adaptive-Micro-Batching" class="headerlink" title="5.1. Adaptive Micro Batching"></a>5.1. Adaptive Micro Batching</h4><p>2 tham số quan trọng cần chú ý khi sử dụng Adaptive Micro Batching:</p>
 <ul>
-<li>mb_max_batch_size: kích thước tối đa của 1 batch</li>
-<li>mb_max_latency: thời gian phàn hồi tối đa (đơn vị miliseconds)</li>
+<li><strong>mb_max_batch_size:</strong> kích thước tối đa của 1 batch</li>
+<li><strong>mb_max_latency:</strong> thời gian phàn hồi tối đa (đơn vị miliseconds)</li>
 </ul>
 <p>Dựa vào 2 tham số trên, framework sẽ tự điều chỉnh thời gian chờ và kích thước batch sao cho throughput (số lượng request xử lý trong một lần) là lớn nhất và latency (thời gian phản hồi) là nhỏ nhất. Nếu các bác quan tâm về cơ chế tự điều chỉnh này, có thể xem thêm tại <a target="_blank" rel="noopener" href="https://github.com/bentoml/BentoML/discussions/927">đây</a> hoặc đây.</p>
 <h4 id="5-2-Monitoring-voi-Prometheus"><a href="#5-2-Monitoring-voi-Prometheus" class="headerlink" title="5.2. Monitoring với Prometheus"></a>5.2. Monitoring với Prometheus</h4><p>Sau khi đã start API server, chúng ta có thể lấy một số metrics có sẵn thông qua <code>/metrics</code> endpoint như sau:</p>
