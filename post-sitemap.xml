@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>http://quan-dang.github.io/2021/01/18/decision-trees-dts/</loc>
+        <lastmod>2022-01-17T11:14:39.696Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://quan-dang.github.io/2021/10/30/model-serving-using-bentoml/</loc>
         <lastmod>2022-01-16T10:29:48.784Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -27,14 +35,6 @@
     <url>
         <loc>http://quan-dang.github.io/2021/01/24/knowledge-distillation-using-pytorch/</loc>
         <lastmod>2022-01-01T07:50:13.109Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://quan-dang.github.io/2021/01/18/decision-trees-dts/</loc>
-        <lastmod>2021-10-13T14:39:07.150Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
