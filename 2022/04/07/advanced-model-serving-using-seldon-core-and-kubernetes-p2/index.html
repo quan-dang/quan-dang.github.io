@@ -11,7 +11,7 @@
   
   <title>
     
-      archive_a: 2022 
+      Advanced Model Serving sử dụng Seldon Core (P.2) 
       
       
       |
@@ -95,93 +95,125 @@
 
 
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2022</span>
-          </h2>
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">Advanced Model Serving sử dụng Seldon Core (P.2)</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="Update time"></i>
+          2022-04-07 16:15:16
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <p>Hello cả nhà =)) sau bao nhiêu ngày ở ẩn, mình đã quyết định trở lại với phần 2 của model serving sử dụng Seldon Core. Phần này sẽ có những chủ đề sau:</p>
+<ul>
+<li>Autoscale model serving với KEDA</li>
+<li>Customize metrics cho Prometheus</li>
+</ul>
+<h3 id="I-Autoscale-model-serving-voi-KEDA"><a href="#I-Autoscale-model-serving-voi-KEDA" class="headerlink" title="I. Autoscale model serving với KEDA"></a>I. Autoscale model serving với KEDA</h3><h4 id="1-Horizontal-Pod-Autoscaler-HPA"><a href="#1-Horizontal-Pod-Autoscaler-HPA" class="headerlink" title="1. Horizontal Pod Autoscaler (HPA)"></a>1. Horizontal Pod Autoscaler (HPA)</h4><p>HPA object trong Kubernetes (k8s) được sử dụng để tự động tăng/giảm số lượng pod trong 1 deployment, replica set, hoặc statefulset dựa trên các metrics được định nghĩa sẵn trong file manifest: CPU/memory utilization, hoặc một custom metric.<br>Dưới đây là ví dụ về một HPA manifest.</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">autoscaling/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">HorizontalPodAutoscaler</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">hello-world</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">default</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">maxReplicas:</span> <span class="number">10</span></span><br><span class="line">  <span class="attr">minReplicas:</span> <span class="number">1</span></span><br><span class="line">  <span class="attr">scaleTargetRef:</span></span><br><span class="line">    <span class="attr">apiVersion:</span> <span class="string">extensions/v1beta1</span></span><br><span class="line">    <span class="attr">kind:</span> <span class="string">Deployment</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">hello-world</span></span><br><span class="line">  <span class="attr">targetCPUUtilizationPercentage:</span> <span class="number">50</span></span><br></pre></td></tr></table></figure>
+<p>HPA trên sẽ tự động tăng/giảm số lượng pod cho deployment <code>hello-world</code> dựa trên phần trăm CPU sử dụng trung bình trên tất cả các pod (<code>mean CPU utilization percentage</code>). HPA cũng đảm bảo số lượng pod tối thiếu là 1, và tối đa là 10.</p>
+<h4 id="2-KEDA"><a href="#2-KEDA" class="headerlink" title="2. KEDA"></a>2. KEDA</h4><p>KEDA (Kubernetes-based Event Driven Autoscaler) được xây dựng dựa trên HPA, cơ chế đơn giản như sau:<br><img src="keda-arch.png" alt="KEDA arch" width="500" height="500" /></p>
+<h3 id="II-Customize-metrics-cho-Prometheus"><a href="#II-Customize-metrics-cho-Prometheus" class="headerlink" title="II. Customize metrics cho Prometheus"></a>II. Customize metrics cho Prometheus</h3><h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><p>[1] <a target="_blank" rel="noopener" href="https://cloud.redhat.com/blog/kubernetes-autoscaling-3-common-methods-explained">https://cloud.redhat.com/blog/kubernetes-autoscaling-3-common-methods-explained</a><br>[2] <a target="_blank" rel="noopener" href="https://cloudblogs.microsoft.com/opensource/2020/05/12/scaling-kubernetes-keda-intro-kubernetes-based-event-driven-autoscaling/">https://cloudblogs.microsoft.com/opensource/2020/05/12/scaling-kubernetes-keda-intro-kubernetes-based-event-driven-autoscaling/</a></p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2022/01/16/advanced-model-serving-using-seldon-core-and-kubernetes-p1/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime" title="Update time"></i>
+              2022-04-07 16:15:16
+            </span>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
         </div>
       
-      <div class="post-item" title="Advanced Model Serving sử dụng Seldon Core (P.2)">
-        <div class="time-m-d">04-07</div>
-        <div class="title">
-          <a href="/2022/04/07/advanced-model-serving-using-seldon-core-and-kubernetes-p2/">
-            <span>Advanced Model Serving sử dụng Seldon Core (P.2)</span>
-          </a>
-        </div>
-      </div>
+    </div>
     
-      <div class="post-item" title="Advanced Model Serving sử dụng Seldon Core (P.1)">
-        <div class="time-m-d">01-16</div>
-        <div class="title">
-          <a href="/2022/01/16/advanced-model-serving-using-seldon-core-and-kubernetes-p1/">
-            <span>Advanced Model Serving sử dụng Seldon Core (P.1)</span>
-          </a>
-        </div>
-      </div>
+  <div class="post-catalog" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#I-Autoscale-model-serving-voi-KEDA"><span class="toc-text">I. Autoscale model serving với KEDA</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Horizontal-Pod-Autoscaler-HPA"><span class="toc-text">1. Horizontal Pod Autoscaler (HPA)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-KEDA"><span class="toc-text">2. KEDA</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#II-Customize-metrics-cho-Prometheus"><span class="toc-text">II. Customize metrics cho Prometheus</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#References"><span class="toc-text">References</span></a></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
     
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2021</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="Model Serving sử dụng BentoML">
-        <div class="time-m-d">10-30</div>
-        <div class="title">
-          <a href="/2021/10/30/model-serving-using-bentoml/">
-            <span>Model Serving sử dụng BentoML</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Kiểm thử hệ thống Machine Learning">
-        <div class="time-m-d">08-22</div>
-        <div class="title">
-          <a href="/2021/08/22/test-in-ml/">
-            <span>Kiểm thử hệ thống Machine Learning</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Tổng quan về hệ thống Machine Learning">
-        <div class="time-m-d">08-01</div>
-        <div class="title">
-          <a href="/2021/08/01/ml-system-overview/">
-            <span>Tổng quan về hệ thống Machine Learning</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Knowledge Distillation với PyTorch">
-        <div class="time-m-d">01-24</div>
-        <div class="title">
-          <a href="/2021/01/24/knowledge-distillation-using-pytorch/">
-            <span>Knowledge Distillation với PyTorch</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Decision Trees">
-        <div class="time-m-d">01-18</div>
-        <div class="title">
-          <a href="/2021/01/18/decision-trees-dts/">
-            <span>Decision Trees</span>
-          </a>
-        </div>
+      <div class="comments-container">
+        
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://quan-dang.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
       </div>
     
   </div>
-</div>
+
 
         <div class="footer">
   <div class="social">

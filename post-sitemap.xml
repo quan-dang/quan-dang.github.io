@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>http://quan-dang.github.io/2022/04/07/advanced-model-serving-using-seldon-core-and-kubernetes-p2/</loc>
+        <lastmod>2022-04-23T07:49:36.070Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://quan-dang.github.io/2022/01/16/advanced-model-serving-using-seldon-core-and-kubernetes-p1/</loc>
         <lastmod>2022-02-02T09:54:18.054Z</lastmod>
         <changefreq>weekly</changefreq>
