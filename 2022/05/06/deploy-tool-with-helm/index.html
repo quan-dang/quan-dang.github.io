@@ -11,7 +11,7 @@
   
   <title>
     
-      archive_a: 2022/1 
+      Deploy tool sử dụng Helm 
       
       
       |
@@ -95,102 +95,132 @@
 
 
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2022</span>
-          </h2>
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">Deploy tool sử dụng Helm</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="Update time"></i>
+          2022-05-06 09:54:36
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <p>Kubeflow là một open-source ML platform với rất nhiều tính năng có sẵn. Tuy nhiên, tuỳ vào các bài toán cụ thể của công ty mà phát sinh nhu cầu deploy thêm các công cụ khác, ví dụ MLFlow và Seldon Core, .v.v.</p>
+<p>Bài blog này sẽ hướng dẫn mọi người sử dụng Helm để deploy MLFlow lên cluster kubeflow.</p>
+<h3 id="1-Helm-la-gi"><a href="#1-Helm-la-gi" class="headerlink" title="1. Helm là gì?"></a>1. Helm là gì?</h3><p>Helm là một công cụ cho phép install, upgrade, rollback và remove một ứng dụng trên nền tàng k8s một cách dễ dàng. Helm chart là tập hợp các file YAML template và config cần thiết để cài đặt ứng dụng.</p>
+<h3 id="2-Deploy-MLFlow-su-dung-helm"><a href="#2-Deploy-MLFlow-su-dung-helm" class="headerlink" title="2. Deploy MLFlow sử dụng helm"></a>2. Deploy MLFlow sử dụng helm</h3><p>Helm chart cho MLFlow sẽ bao gồm các file sau:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── Chart.yaml</span><br><span class="line">├── docker</span><br><span class="line">│   └── Dockerfile</span><br><span class="line">├── templates</span><br><span class="line">│   ├── _helpers.tpl</span><br><span class="line">│   ├── deployment.yaml</span><br><span class="line">│   ├── secret.yaml</span><br><span class="line">│   └── service.yaml</span><br><span class="line">└── values.yaml</span><br></pre></td></tr></table></figure>
+<p>Để cài đặt MLFlow chỉ cần sử dụng command sau:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">helm upgrade --install mlflow -f values.yaml .</span><br></pre></td></tr></table></figure>
+<p>Để gỡ cài đặt</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">helm remove mlflow</span><br></pre></td></tr></table></figure>
+<p>Một số command hữu ích khác:</p>
+<ul>
+<li>rollback về version nào đó<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">helm rollback mlflow</span><br></pre></td></tr></table></figure></li>
+<li>kiểm tra các ứng dụng đã deploy bằng helm (còn gọi là release)<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">helm ls</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="3-Quan-ly-nhieu-helm-charts-voi-helmfile"><a href="#3-Quan-ly-nhieu-helm-charts-voi-helmfile" class="headerlink" title="3. Quản lý nhiều helm charts với helmfile"></a>3. Quản lý nhiều helm charts với helmfile</h3><p>Khi chúng ta có nhiều helm charts thì làm sao để thiết kế CI/CD tự động install/upgrade các ứng dụng mỗi khi có thay đổi ở các YAML file? Helmfile giúp đơn giản hoá công việc này với command:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">helmfile -e nonprod apply</span><br></pre></td></tr></table></figure>
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2022/04/07/advanced-model-serving-using-seldon-core-and-kubernetes-p2/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime" title="Update time"></i>
+              2022-05-06 09:54:36
+            </span>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
         </div>
       
-      <div class="post-item" title="Deploy tool sử dụng Helm">
-        <div class="time-m-d">05-06</div>
-        <div class="title">
-          <a href="/2022/05/06/deploy-tool-with-helm/">
-            <span>Deploy tool sử dụng Helm</span>
-          </a>
-        </div>
-      </div>
+    </div>
     
-      <div class="post-item" title="Advanced Model Serving sử dụng Seldon Core (P.2)">
-        <div class="time-m-d">04-07</div>
-        <div class="title">
-          <a href="/2022/04/07/advanced-model-serving-using-seldon-core-and-kubernetes-p2/">
-            <span>Advanced Model Serving sử dụng Seldon Core (P.2)</span>
-          </a>
-        </div>
-      </div>
+  <div class="post-catalog" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Helm-la-gi"><span class="toc-text">1. Helm là gì?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Deploy-MLFlow-su-dung-helm"><span class="toc-text">2. Deploy MLFlow sử dụng helm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Quan-ly-nhieu-helm-charts-voi-helmfile"><span class="toc-text">3. Quản lý nhiều helm charts với helmfile</span></a></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
     
-      <div class="post-item" title="Advanced Model Serving sử dụng Seldon Core (P.1)">
-        <div class="time-m-d">01-16</div>
-        <div class="title">
-          <a href="/2022/01/16/advanced-model-serving-using-seldon-core-and-kubernetes-p1/">
-            <span>Advanced Model Serving sử dụng Seldon Core (P.1)</span>
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2021</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="Model Serving sử dụng BentoML">
-        <div class="time-m-d">10-30</div>
-        <div class="title">
-          <a href="/2021/10/30/model-serving-using-bentoml/">
-            <span>Model Serving sử dụng BentoML</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Kiểm thử hệ thống Machine Learning">
-        <div class="time-m-d">08-22</div>
-        <div class="title">
-          <a href="/2021/08/22/test-in-ml/">
-            <span>Kiểm thử hệ thống Machine Learning</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Tổng quan về hệ thống Machine Learning">
-        <div class="time-m-d">08-01</div>
-        <div class="title">
-          <a href="/2021/08/01/ml-system-overview/">
-            <span>Tổng quan về hệ thống Machine Learning</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Knowledge Distillation với PyTorch">
-        <div class="time-m-d">01-24</div>
-        <div class="title">
-          <a href="/2021/01/24/knowledge-distillation-using-pytorch/">
-            <span>Knowledge Distillation với PyTorch</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Decision Trees">
-        <div class="time-m-d">01-18</div>
-        <div class="title">
-          <a href="/2021/01/18/decision-trees-dts/">
-            <span>Decision Trees</span>
-          </a>
-        </div>
+      <div class="comments-container">
+        
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://quan-dang.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
       </div>
     
   </div>
-</div>
+
 
         <div class="footer">
   <div class="social">
