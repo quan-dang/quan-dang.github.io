@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>Deploy MLFlow lên kubeflow cluster sử dụng Helm</title>
+      <title>Deploy MLFlow lên Kubeflow cluster sử dụng Helm</title>
       <link href="2022/05/06/deploy-mlflow-on-kubeflow-cluster-using-helm/"/>
       <url>2022/05/06/deploy-mlflow-on-kubeflow-cluster-using-helm/</url>
       
