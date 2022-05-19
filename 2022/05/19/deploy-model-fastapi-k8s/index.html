@@ -11,6 +11,11 @@
   
   <title>
     
+      Deploy model on k8s using FastAPI 
+      
+      
+      |
+    
      MLE Blog
   </title>
 
@@ -90,134 +95,117 @@
 
 
       <div class="flex-container">
-        <div class="container index">
-  <div class="post-list">
-    <!-- 遍历渲染文章 -->
-    
-      <div class="post-item" title="Deploy model on k8s using FastAPI">
-        <div class="time-m-d">2022-05-19</div>
-        <div class="title">
-          <a href="/2022/05/19/deploy-model-fastapi-k8s/">
-            
-              
-                <span>Deploy model on k8s using FastAPI</span>
-              
-            
-          </a>
-        </div>
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">Deploy model on k8s using FastAPI</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="Update time"></i>
+          2022-05-19 17:19:09
+        </span>
+        
       </div>
-    
-      <div class="post-item" title="Deploy MLFlow lên Kubeflow cluster sử dụng Helm">
-        <div class="time-m-d">2022-05-06</div>
-        <div class="title">
-          <a href="/2022/05/06/deploy-mlflow-on-kubeflow-cluster-using-helm/">
-            
-              
-                <span>Deploy MLFlow lên Kubeflow cluster sử dụng Helm</span>
-              
-            
-          </a>
-        </div>
+      <div class="markdown-body">
+        <h3 id="Train-model"><a href="#Train-model" class="headerlink" title="Train model"></a>Train model</h3><p>Ở bài blog này mình tiếp tục sử dụng tập dữ liệu Iris huyền thoại để train một classification model</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> accuracy_score</span><br><span class="line"></span><br><span class="line"><span class="comment"># load dataset</span></span><br><span class="line">iris = load_iris()</span><br><span class="line">X = iris.data  <span class="comment"># we only take the first two features.</span></span><br><span class="line">y = iris.target</span><br><span class="line"></span><br><span class="line"><span class="comment"># train-test split</span></span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(</span><br><span class="line">    X, y, test_size=<span class="number">0.33</span>, random_state=<span class="number">42</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># train with RF</span></span><br><span class="line">clf = RandomForestClassifier()</span><br><span class="line">clf.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line"><span class="comment"># evaluate</span></span><br><span class="line">X_pred = clf.predict(X_test)</span><br><span class="line">acc = accuracy_score(y_test, X_pred)</span><br></pre></td></tr></table></figure>
+<h3 id="Viet-API-su-dung-FastAPI"><a href="#Viet-API-su-dung-FastAPI" class="headerlink" title="Viết API sử dụng FastAPI"></a>Viết API sử dụng FastAPI</h3><h3 id="Viet-file-config-de-deploy-tren-k8s"><a href="#Viet-file-config-de-deploy-tren-k8s" class="headerlink" title="Viết file config để deploy trên k8s"></a>Viết file config để deploy trên k8s</h3>
       </div>
-    
-      <div class="post-item" title="Advanced Model Serving sử dụng Seldon Core (P.2)">
-        <div class="time-m-d">2022-04-07</div>
-        <div class="title">
-          <a href="/2022/04/07/advanced-model-serving-using-seldon-core-and-kubernetes-p2/">
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
             
-              
-                <span>Advanced Model Serving sử dụng Seldon Core (P.2)</span>
-              
+              <a href="/2022/05/06/deploy-mlflow-on-kubeflow-cluster-using-helm/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
             
-          </a>
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime" title="Update time"></i>
+              2022-05-19 17:19:09
+            </span>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
         </div>
-      </div>
+      
+    </div>
     
-      <div class="post-item" title="Advanced Model Serving sử dụng Seldon Core (P.1)">
-        <div class="time-m-d">2022-01-16</div>
-        <div class="title">
-          <a href="/2022/01/16/advanced-model-serving-using-seldon-core-and-kubernetes-p1/">
-            
-              
-                <span>Advanced Model Serving sử dụng Seldon Core (P.1)</span>
-              
-            
-          </a>
-        </div>
-      </div>
+  <div class="post-catalog" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Train-model"><span class="toc-text">Train model</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Viet-API-su-dung-FastAPI"><span class="toc-text">Viết API sử dụng FastAPI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Viet-file-config-de-deploy-tren-k8s"><span class="toc-text">Viết file config để deploy trên k8s</span></a></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
     
-      <div class="post-item" title="Model Serving sử dụng BentoML">
-        <div class="time-m-d">2021-10-30</div>
-        <div class="title">
-          <a href="/2021/10/30/model-serving-using-bentoml/">
-            
-              
-                <span>Model Serving sử dụng BentoML</span>
-              
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Kiểm thử hệ thống Machine Learning">
-        <div class="time-m-d">2021-08-22</div>
-        <div class="title">
-          <a href="/2021/08/22/test-in-ml/">
-            
-              
-                <span>Kiểm thử hệ thống Machine Learning</span>
-              
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Tổng quan về hệ thống Machine Learning">
-        <div class="time-m-d">2021-08-01</div>
-        <div class="title">
-          <a href="/2021/08/01/ml-system-overview/">
-            
-              
-                <span>Tổng quan về hệ thống Machine Learning</span>
-              
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Knowledge Distillation với PyTorch">
-        <div class="time-m-d">2021-01-24</div>
-        <div class="title">
-          <a href="/2021/01/24/knowledge-distillation-using-pytorch/">
-            
-              
-                <span>Knowledge Distillation với PyTorch</span>
-              
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Decision Trees">
-        <div class="time-m-d">2021-01-18</div>
-        <div class="title">
-          <a href="/2021/01/18/decision-trees-dts/">
-            
-              
-                <span>Decision Trees</span>
-              
-            
-          </a>
-        </div>
+      <div class="comments-container">
+        
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://quan-dang.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
       </div>
     
   </div>
-  <nav class="post-navigation">
-    
-    <span class="page-num">1 / 1</span>
-    
-  </nav>
-</div>
+
 
         <div class="footer">
   <div class="social">
