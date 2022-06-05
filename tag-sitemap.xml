@@ -4,63 +4,63 @@
 
     <url>
         <loc>http://quan-dang.github.io/tags/random-forest/</loc>
-        <lastmod>2022-01-17T11:14:39.696Z</lastmod>
+        <lastmod>2022-01-17T11:14:39.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://quan-dang.github.io/tags/decision-trees/</loc>
-        <lastmod>2022-01-17T11:14:39.696Z</lastmod>
+        <lastmod>2022-01-17T11:14:39.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://quan-dang.github.io/tags/model-serving/</loc>
-        <lastmod>2022-01-16T10:29:48.784Z</lastmod>
+        <lastmod>2022-01-16T10:29:48.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://quan-dang.github.io/tags/model-compression/</loc>
-        <lastmod>2022-01-01T07:50:13.109Z</lastmod>
+        <lastmod>2022-01-01T07:50:13.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://quan-dang.github.io/tags/knowledge-distillation/</loc>
-        <lastmod>2022-01-01T07:50:13.109Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://quan-dang.github.io/tags/mlops/</loc>
-        <lastmod>2021-08-22T18:00:04.478Z</lastmod>
+        <lastmod>2022-01-01T07:50:13.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://quan-dang.github.io/tags/testing/</loc>
-        <lastmod>2021-08-22T18:00:04.478Z</lastmod>
+        <lastmod>2021-08-22T18:00:04.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://quan-dang.github.io/tags/ml-testing/</loc>
-        <lastmod>2021-08-22T18:00:04.478Z</lastmod>
+        <lastmod>2021-08-22T18:00:04.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://quan-dang.github.io/tags/mlops/</loc>
+        <lastmod>2021-08-22T18:00:04.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://quan-dang.github.io/tags/machine-learning-system/</loc>
-        <lastmod>2021-08-01T11:51:02.453Z</lastmod>
+        <lastmod>2021-08-01T11:51:02.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
