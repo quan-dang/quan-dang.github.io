@@ -9,16 +9,16 @@
 
 
     <url>
-        <loc>http://quan-dang.github.io/2022/05/19/deploy-model-fastapi-k8s/</loc>
-        <lastmod>2022-06-05T16:40:28.606Z</lastmod>
+        <loc>http://quan-dang.github.io/2022/06/05/http-vs-grpc/</loc>
+        <lastmod>2022-06-05T16:45:11.138Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://quan-dang.github.io/2022/06/05/http-vs-grpc/</loc>
-        <lastmod>2022-06-05T16:33:04.944Z</lastmod>
+        <loc>http://quan-dang.github.io/2022/05/19/deploy-model-fastapi-k8s/</loc>
+        <lastmod>2022-06-05T16:40:28.606Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
